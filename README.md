@@ -50,3 +50,10 @@ npx mocha
 ## 许可证
 
 本项目使用 MIT 许可证 - 有关详情，请参阅 [LICENSE](LICENSE) 文件。
+
+
+## 遇到的问题
+
+在使用JsonRpcProvider时 rpc 用的infura的，结果总是报错
+```JsonRpcProvider failed to detect network and cannot start up; retry in 1s```
+换个rpc就可以了，原因是因为JsonRpcProvider会尝试在一个请求中一起发送eth_chainId和eth_getBlockByNumber，这是tenderly rpc不支持的（仅支持单一方法批次）。如果节点禁用了批量请求就会遇到错误
