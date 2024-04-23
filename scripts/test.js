@@ -27,7 +27,7 @@ const main = async () => {
     console.log(`总供给: ${ethers.formatEther(totalSupplyWETH)}`)
     const balanceWETH = await contractWETH.balanceOf('vitalik.eth')
     console.log(`Vitalik持仓: ${ethers.formatEther(balanceWETH)}\n`)
-
+    // console.log(111)
 
 }
 
