@@ -57,3 +57,11 @@ npx mocha
 - 在使用JsonRpcProvider时 rpc 用的infura的，结果总是报错
     ```JsonRpcProvider failed to detect network and cannot start up; retry in 1s```
     -  换个rpc就可以了，原因是因为JsonRpcProvider会尝试在一个请求中一起发送eth_chainId和eth_getBlockByNumber，这是tenderly rpc不支持的（仅支持单一方法批次）。如果节点禁用了批量请求就会遇到错误
+
+
+
+## eth启动命令
+    geth  --cache 32768 --datadir /data/ethereum --http --http.addr 0.0.0.0   --http.api "eth,net,engine,web3" --ws --ws.addr 0.0.0.0  --ws.api "eth,net,engine,web3"  --txlookuplimit 0  --rpc.gascap 0  --rpc.txfeecap 0 --authrpc.addr 0.0.0.0  --authrpc.port 8551  --authrpc.vhosts=* --authrpc.jwtsecret /root/eth/jwt.hex --rpc.allow-unprotected-txs --maxpeers 2000
+
+
+
