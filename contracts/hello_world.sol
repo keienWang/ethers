@@ -10,6 +10,4 @@ mapping (address => uint) public  balance ;
 
 mapping(uint => address ) public admins;
 
-
-
 }
