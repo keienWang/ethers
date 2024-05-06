@@ -64,4 +64,14 @@ npx mocha
     geth  --cache 32768 --datadir /data/ethereum --http --http.addr 0.0.0.0   --http.api "eth,net,engine,web3" --ws --ws.addr 0.0.0.0  --ws.api "eth,net,engine,web3"  --txlookuplimit 0  --rpc.gascap 0  --rpc.txfeecap 0 --authrpc.addr 0.0.0.0  --authrpc.port 8551  --authrpc.vhosts=* --authrpc.jwtsecret /root/eth/jwt.hex --rpc.allow-unprotected-txs --maxpeers 2000
 
 
+## 共识层启动命令
 
+    ./prysm.sh beacon-chain --execution-endpoint=http://localhost:8551 --jwt-secret=/root/eth/jwt.hex   --datadir=/data/prysm/data --accept-terms-of-use=true --checkpoint-sync-url=https://beaconstate.info 
+
+
+    ./lighthouse bn \
+  --network mainnet \
+  --execution-endpoint http://localhost:8551 \
+  --execution-jwt /root/eth/jwt.hex \
+  --checkpoint-sync-url https://mainnet.checkpoint.sigp.io \
+  --http
