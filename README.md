@@ -66,7 +66,7 @@ npx mocha
 
 ## 共识层启动命令
 
-    ./prysm.sh beacon-chain --execution-endpoint=http://localhost:8551 --jwt-secret=/root/eth/jwt.hex   --datadir=/data/prysm/data --accept-terms-of-use=true --checkpoint-sync-url=https://beaconstate.info 
+    ./prysm.sh beacon-chain --execution-endpoint=http://localhost:8551 --jwt-secret=/root/eth/jwt.hex   --datadir=/data/prysm/data 
 
 
     ./lighthouse bn \
