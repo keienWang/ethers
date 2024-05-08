@@ -75,3 +75,13 @@ npx mocha
   --execution-jwt /root/eth/jwt.hex \
   --checkpoint-sync-url https://mainnet.checkpoint.sigp.io \
   --http
+
+
+
+##冷钱包
+
+- nexvault钱包
+
+
+
+
