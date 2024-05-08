@@ -78,7 +78,7 @@ screen -S prysm   #创建prysm启动窗口
 # 五、启动ETH执行客户端
 ```bash
 screen -S eth   #创建eth启动窗口
- ./geth --cache 10240   --datadir ./node --ws --ws.port 8546 --ws.addr 0.0.0.0 --ws.origins '*' --authrpc.addr localhost --authrpc.port 8551 --authrpc.vhosts localhost --maxpeers=300 --authrpc.jwtsecret /eth/consensus/prysm/jwt.hex --state.scheme=path
+ geth  --cache 32768 --datadir /data/ethereum --http --http.addr 0.0.0.0   --http.api "eth,net,engine,web3" --ws --ws.addr 0.0.0.0  --ws.api "eth,net,engine,web3"  --txlookuplimit 0  --rpc.gascap 0  --rpc.txfeecap 0 --authrpc.addr 0.0.0.0  --authrpc.port 8551  --authrpc.vhosts=* --authrpc.jwtsecret /root/eth/jwt.hex --rpc.allow-unprotected-txs --maxpeers 2000 --syncmode full
  ```
 参数说明： –datadir：指定ETH节点数据库和密钥存储库的数据目录(默认即可) –cache：设置最大分配给内部缓存的内存，默认:1024（设置越大，每次同步的数据越多，消耗的内存也越大） –rpc.allow-unprotected-txs：允许通过RPC提交不受保护的（非 EIP155 签名）交易 –txlookuplimit 0 : 禁用删除事务索引
 
