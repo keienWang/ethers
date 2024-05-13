@@ -139,3 +139,5 @@ WantedBy=multi-user.target
 
  ##### 停止节点
  bitcoind stop
+
+ 
