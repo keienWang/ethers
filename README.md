@@ -135,3 +135,7 @@ WantedBy=multi-user.target
 ##### 查区块信息
  bitcoin-cli getblockchaininfo
  bitcoin-cli -getinfo
+
+
+ ##### 停止节点
+ bitcoind stop
