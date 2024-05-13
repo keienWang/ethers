@@ -82,6 +82,8 @@ npx mocha
 
 
 
+
+
 ##冷钱包
 
 
@@ -90,3 +92,39 @@ npx mocha
 
 
 
+## 搭建btc节点
+wget https://bitcoincore.org/bin/bitcoin-core-26.1/bitcoin-26.1-x86_64-linux-gnu.tar.gz
+tar -xzvf bitcoin-26.1-x86_64-linux-gnu.tar.gz
+sudo install -m 0755 -o root -g root -t /usr/local/bin bitcoin-26.1/bin/*
+
+mkdir -p /data/bitcoin_data/data
+
+
+#### 配置bitcoin配置文件
+echo 'server=1
+daemon=1
+# 如果您想作为一个全节点运行，不需要钱包功能，可以设置disablewallet=1
+# disablewallet=1
+rpcuser=keien
+rpcpassword=
+datadir=/data/bitcoin_data/data
+rpcallowip=0.0.0.0/0
+rpcconnect=127.0.0.1
+# 可选：设置比特币核心与网络的连接数
+maxconnections=40
+txindex=1' >  /data/bitcoin_data/bitcoin.conf
+
+
+vim /etc/systemd/system/bitcoind.service
+
+[Unit]
+Description=Bitcoin's distributed currency daemon
+After=network.target
+
+[Service]
+User=root
+Group=root
+Type=forking
+ExecStart=/usr/local/bin/bitcoind -daemon -conf=/data/bitcoin_data/bitcoin.conf
+[Install]
+WantedBy=multi-user.target
