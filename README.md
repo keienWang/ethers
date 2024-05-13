@@ -93,7 +93,8 @@ npx mocha
 
 
 
-## 搭建btc节点 btc节点较比eth简单，但是命令行配置优先级不如配置文件优先级高
+## 搭建btc节点
+  - btc节点较比eth简单，但是命令行配置优先级不如配置文件优先级高
 wget https://bitcoincore.org/bin/bitcoin-core-26.1/bitcoin-26.1-x86_64-linux-gnu.tar.gz
 tar -xzvf bitcoin-26.1-x86_64-linux-gnu.tar.gz
 sudo install -m 0755 -o root -g root -t /usr/local/bin bitcoin-26.1/bin/*
