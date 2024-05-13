@@ -130,3 +130,8 @@ Type=forking
 ExecStart=/usr/local/bin/bitcoind -daemon -conf=/data/bitcoin_data/bitcoin.conf
 [Install]
 WantedBy=multi-user.target
+
+
+##### 查区块信息
+ bitcoin-cli getblockchaininfo
+ bitcoin-cli -getinfo
