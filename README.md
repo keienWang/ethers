@@ -72,9 +72,8 @@ npx mocha
     ./lighthouse bn \
   --network mainnet \
   --execution-endpoint http://localhost:8551 \
-  --execution-jwt /root/eth/jwt.hex \
-  --checkpoint-sync-url https://mainnet.checkpoint.sigp.io \
-  --http
+  --execution-jwt /eth/jwt.hex \
+  --checkpoint-sync-url https://mainnet.checkpoint.sigp.io 
 
 
 
