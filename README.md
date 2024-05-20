@@ -61,12 +61,12 @@ npx mocha
 
 
 ## eth启动命令
-    geth  --cache 32768 --datadir /data/ethereum --http --http.addr 0.0.0.0   --http.api "eth,net,engine,web3" --ws --ws.addr 0.0.0.0  --ws.api "eth,net,engine,web3"  --txlookuplimit 0  --rpc.gascap 0  --rpc.txfeecap 0 --authrpc.addr 0.0.0.0  --authrpc.port 8551  --authrpc.vhosts=* --authrpc.jwtsecret /root/eth/jwt.hex --rpc.allow-unprotected-txs --maxpeers 2000 --syncmode full
+    geth  --cache 32768 --datadir /data/ethereum/ --http --http.addr 0.0.0.0   --http.api "eth,net,engine,web3,debug,admin" --ws --ws.addr 0.0.0.0  --ws.api "eth,net,engine,web3,debug,admin"  --txlookuplimit 0  --rpc.gascap 0  --rpc.txfeecap 0 --authrpc.addr 0.0.0.0  --authrpc.port 8551  --authrpc.vhosts=* --authrpc.jwtsecret /eth/jwt.hex --rpc.allow-unprotected-txs --maxpeers 2000 --syncmode full
 
 
 ## 共识层启动命令
 
-    ./prysm.sh beacon-chain --execution-endpoint=http://localhost:8551 --jwt-secret=/root/eth/jwt.hex   --datadir=/data/prysm/data 
+    ./prysm.sh beacon-chain --execution-endpoint=http://localhost:8551 --jwt-secret=/eth/jwt.hex   --datadir=/data/prysm/data 
 
 
     ./lighthouse bn \
