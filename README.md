@@ -78,6 +78,24 @@ npx mocha
 
 
 
+  ## reth启动命令
+    reth node --http --http.api all \
+    --http.corsdomain "*" \
+    --metrics 127.0.0.1:9001 \
+    --authrpc.jwtsecret /root/jwt.hex
+
+  ./lighthouse bn \
+  --network mainnet \
+  --execution-endpoint http://localhost:8551 \
+  --execution-jwt /root/.local/share/reth/mainnet/jwt.hex \
+  --checkpoint-sync-url https://mainnet-checkpoint-sync.attestant.io
+
+  ./prysm.sh beacon-chain --execution-endpoint=http://localhost:8551 --jwt-secret=/root/jwt.hex   --datadir=/data/prysm/data --checkpoint-sync-url https://sync-mainnet.beaconcha.in
+
+    
+
+
+
 
 
 
