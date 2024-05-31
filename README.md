@@ -159,21 +159,3 @@ WantedBy=multi-user.target
  bitcoind stop
 
  
-
-
- ## titan mingling
-
-cd /
-wget https://github.com/Titannet-dao/titan-node/releases/download/v0.1.18/titan_v0.1.18_linux_amd64.tar.gz
-tar -xvf titan_v0.1.18_linux_amd64.tar.gz 
-
-screen -S titan
-cd titan_v0.1.18_linux_amd64
-./titan-edge daemon start --init --url https://test-locator.titannet.io:5000/rpc/v0
-
-cd /titan_v0.1.18_linux_amd64/
-./titan-edge bind --hash=390D1566-39B8-4DFF-A335-308F52E3FF88 https://api-test1.container1.titannet.io/api/v2/device/binding
-
-
-EEDC17FF-241C-41DF-86C9-A9DA396EA696
-./titan-edge bind --hash=EEDC17FF-241C-41DF-86C9-A9DA396EA696 https://api-test1.container1.titannet.io/api/v2/device/binding
