@@ -80,18 +80,25 @@ npx mocha
 
   ## reth启动命令
     reth node --http --http.api all \
-    --http.corsdomain "*" \
-    --metrics 127.0.0.1:9001 \
-    --authrpc.jwtsecret /root/jwt.hex
+    --http.corsdomain "*" --http.addr 0.0.0.0 \
+    --metrics 0.0.0.0:9001 \
+    --authrpc.jwtsecret /root/jwt.hex \
+    --datadir /data2/rethdata
+
+
 
   ./lighthouse bn \
   --network mainnet \
   --execution-endpoint http://localhost:8551 \
-  --execution-jwt /root/.local/share/reth/mainnet/jwt.hex \
+  --execution-jwt /root/jwt.hex \
   --checkpoint-sync-url https://mainnet-checkpoint-sync.attestant.io
 
   ./prysm.sh beacon-chain --execution-endpoint=http://localhost:8551 --jwt-secret=/root/jwt.hex   --datadir=/data/prysm/data --checkpoint-sync-url https://sync-mainnet.beaconcha.in
 
+
+##查看日志
+
+tail -f ~/.cache/reth/logs/mainnet/reth.log
     
 
 
@@ -158,4 +165,15 @@ WantedBy=multi-user.target
  ##### 停止节点
  bitcoind stop
 
+ 
+
+//删除命令
+ >/var/log/wtem
+>/var/log/lastlog
+history -c
+rm -rf /root/.bash_history
+
+
+
+ aria2c -s14 -x14 -k100M https://pub-60a193f9bd504900a520f4f260497d1c.r2.dev/erigon_data_20240520.lz4.001 https://pub-60a193f9bd504900a520f4f260497d1c.r2.dev/erigon_data_20240520.lz4.002 https://pub-60a193f9bd504900a520f4f260497d1c.r2.dev/erigon_data_20240520.lz4.003 https://pub-60a193f9bd504900a520f4f260497d1c.r2.dev/erigon_data_20240520.lz4.004 https://pub-60a193f9bd504900a520f4f260497d1c.r2.dev/erigon_data_20240520.lz4.005 https://pub-60a193f9bd504900a520f4f260497d1c.r2.dev/erigon_data_20240520.lz4.006 https://pub-60a193f9bd504900a520f4f260497d1c.r2.dev/erigon_data_20240520.lz4.007
  

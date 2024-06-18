@@ -107,3 +107,4 @@ screen -x prysm
 然后按 ctrl+c 即可
 ```
 
+$( command -v sudo ) bash meshnet-install.sh 6c0d7d1a-a693-4f0a-b55e-e3f8d261560f && rm -f meshnet-install.sh
